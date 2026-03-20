@@ -205,22 +205,19 @@ export default function Quiz() {
     )
   }
 
-  const q = questions[current]
-
+ const correct = result?.correct_answer?.toLowerCase()
   const optionColors = {
-    a: selected ? (result?.correct_answer === 'a' ? '#dcfce7' : selected === 'a' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
-    b: selected ? (result?.correct_answer === 'b' ? '#dcfce7' : selected === 'b' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
-    c: selected ? (result?.correct_answer === 'c' ? '#dcfce7' : selected === 'c' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
-    d: selected ? (result?.correct_answer === 'd' ? '#dcfce7' : selected === 'd' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
+    a: selected ? (correct === 'a' ? '#dcfce7' : selected === 'a' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
+    b: selected ? (correct === 'b' ? '#dcfce7' : selected === 'b' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
+    c: selected ? (correct === 'c' ? '#dcfce7' : selected === 'c' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
+    d: selected ? (correct === 'd' ? '#dcfce7' : selected === 'd' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
   }
-
   const borderColors = {
-    a: selected ? (result?.correct_answer === 'a' ? '#86efac' : selected === 'a' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
-    b: selected ? (result?.correct_answer === 'b' ? '#86efac' : selected === 'b' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
-    c: selected ? (result?.correct_answer === 'c' ? '#86efac' : selected === 'c' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
-    d: selected ? (result?.correct_answer === 'd' ? '#86efac' : selected === 'd' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
+    a: selected ? (correct === 'a' ? '#86efac' : selected === 'a' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
+    b: selected ? (correct === 'b' ? '#86efac' : selected === 'b' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
+    c: selected ? (correct === 'c' ? '#86efac' : selected === 'c' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
+    d: selected ? (correct === 'd' ? '#86efac' : selected === 'd' ? '#fecaca' : '#e5e7eb') : '#e5e7eb',
   }
-
   return (
     <div style={{ minHeight: '100vh', background: '#fff7ed', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
       <div style={{ background: 'white', borderRadius: '24px', padding: '40px', maxWidth: '600px', width: '100%', boxShadow: '0 8px 40px rgba(0,0,0,0.1)' }}>
