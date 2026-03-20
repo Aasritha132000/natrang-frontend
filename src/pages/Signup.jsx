@@ -22,7 +22,7 @@ export default function Signup() {
     }
 
     try {
-      await axios.post('http://localhost:3000/users', {
+      await axios.post('https://natrang-backend.onrender.com/users', {
         user: { name, email, password, password_confirmation: confirmPassword }
       })
       navigate('/login')

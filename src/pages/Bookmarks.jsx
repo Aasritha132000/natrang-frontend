@@ -17,7 +17,7 @@ export default function Bookmarks() {
     }
 
     axios
-      .get('http://localhost:3000/bookmarks', {
+      .get('https://natrang-backend.onrender.com/bookmarks', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {

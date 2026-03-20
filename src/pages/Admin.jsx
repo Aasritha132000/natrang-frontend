@@ -37,7 +37,7 @@ export default function Admin() {
 
   async function fetchDashboard() {
     try {
-      const res = await axios.get('http://localhost:3000/admin/dashboard', {
+      const res = await axios.get('https://natrang-backend.onrender.com/admin/dashboard', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setStats(res.data)
@@ -48,7 +48,7 @@ export default function Admin() {
 
   async function fetchVideos() {
     try {
-      const res = await axios.get('http://localhost:3000/admin/videos', {
+      const res = await axios.get('https://natrang-backend.onrender.com/admin/videos', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setVideos(res.data)
@@ -59,7 +59,7 @@ export default function Admin() {
 
   async function fetchDances() {
     try {
-      const res = await axios.get('http://localhost:3000/admin/dances', {
+      const res = await axios.get('https://natrang-backend.onrender.com/admin/dances', {
         headers: { Authorization: `Bearer ${token}` }
       })
       setDances(res.data)
@@ -75,7 +75,7 @@ export default function Admin() {
 
     try {
       await axios.post(
-        'http://localhost:3000/admin/videos',
+        'https://natrang-backend.onrender.com/admin/videos',
         {
           dance_id: newDanceId,
           title: newTitle,
@@ -103,7 +103,7 @@ export default function Admin() {
     if (!window.confirm('Are you sure you want to delete this video?')) return
 
     try {
-      await axios.delete(`http://localhost:3000/admin/videos/${id}`, {
+      await axios.delete(`https://natrang-backend.onrender.com/admin/videos/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setMessage('✅ Video deleted!')

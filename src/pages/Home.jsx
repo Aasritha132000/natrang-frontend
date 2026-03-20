@@ -21,7 +21,7 @@ export default function Home() {
     }
 
     axios
-      .get('http://localhost:3000/dances', {
+      .get('https://natrang-backend.onrender.com/dances', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => setDances(res.data))

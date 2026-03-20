@@ -40,7 +40,7 @@ export default function Profile() {
     try {
       const token = localStorage.getItem('token')
       const res = await axios.put(
-        'http://localhost:3000/profile',
+        'https://natrang-backend.onrender.com/profile',
         { user: { name, email } },
         { headers: { Authorization: `Bearer ${token}` } }
       )
@@ -71,7 +71,7 @@ export default function Profile() {
     try {
       const token = localStorage.getItem('token')
       await axios.put(
-        'http://localhost:3000/profile/password',
+        'https://natrang-backend.onrender.com/profile/password',
         {
           user: {
             current_password: currentPassword,

@@ -23,14 +23,14 @@ export default function Quiz() {
     }
 
     axios
-      .get(`http://localhost:3000/dances/${id}`, {
+      .get(`https://natrang-backend.onrender.com/dances/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => setDanceName(res.data.name))
       .catch(() => navigate('/'))
 
     axios
-      .get(`http://localhost:3000/dances/${id}/quizzes`, {
+      .get(`https://natrang-backend.onrender.com/dances/${id}/quizzes`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {
@@ -51,7 +51,7 @@ export default function Quiz() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3000/quizzes/${questions[current].id}/check`,
+        `https://natrang-backend.onrender.com/quizzes/${questions[current].id}/check`,
         { answer: optionKey },
         { headers: { Authorization: `Bearer ${token}` } }
       )

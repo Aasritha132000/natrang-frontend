@@ -24,7 +24,7 @@ export default function DanceCard({ dance }) {
 
     try {
       if (bookmarked) {
-        await axios.delete(`http://localhost:3000/bookmarks/${dance.id}`, {
+        await axios.delete(`https://natrang-backend.onrender.com/bookmarks/${dance.id}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
 
@@ -33,7 +33,7 @@ export default function DanceCard({ dance }) {
         setBookmarked(false)
       } else {
         await axios.post(
-          'http://localhost:3000/bookmarks',
+          'https://natrang-backend.onrender.com/bookmarks',
           { dance_id: dance.id },
           {
             headers: { Authorization: `Bearer ${token}` }

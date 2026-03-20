@@ -15,7 +15,7 @@ export default function DanceShow() {
   async function fetchReviews() {
     try {
       const token = localStorage.getItem('token')
-      const res = await axios.get(`http://localhost:3000/dances/${id}/reviews`, {
+      const res = await axios.get(`https://natrang-backend.onrender.com/dances/${id}/reviews`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       setReviews(res.data.reviews)
@@ -34,14 +34,14 @@ export default function DanceShow() {
     }
 
     axios
-      .get(`http://localhost:3000/dances/${id}`, {
+      .get(`https://natrang-backend.onrender.com/dances/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => setDance(res.data))
       .catch(() => navigate('/'))
 
     axios
-      .get('http://localhost:3000/progress', {
+      .get('https://natrang-backend.onrender.com/progress', {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => setCompletedVideos(res.data.completed_video_ids))
@@ -55,13 +55,13 @@ export default function DanceShow() {
 
     try {
       if (completedVideos.includes(videoId)) {
-        await axios.delete(`http://localhost:3000/progress/${videoId}`, {
+        await axios.delete(`https://natrang-backend.onrender.com/progress/${videoId}`, {
           headers: { Authorization: `Bearer ${token}` }
         })
         setCompletedVideos(completedVideos.filter(id => id !== videoId))
       } else {
         await axios.post(
-          'http://localhost:3000/progress',
+          'https://natrang-backend.onrender.com/progress',
           { video_id: videoId },
           {
             headers: { Authorization: `Bearer ${token}` }
@@ -80,7 +80,7 @@ export default function DanceShow() {
     try {
       const token = localStorage.getItem('token')
       await axios.post(
-        `http://localhost:3000/dances/${id}/reviews`,
+        `https://natrang-backend.onrender.com/dances/${id}/reviews`,
         { rating: userRating, comment: userComment },
         { headers: { Authorization: `Bearer ${token}` } }
       )
