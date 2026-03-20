@@ -34,16 +34,10 @@ export default function Quiz() {
         headers: { Authorization: `Bearer ${token}` }
       })
       .then(res => {
-       const formatted = res.data.map(q => ({
-          ...q,
-          options: { a: q.option_a, b: q.option_b, c: q.option_c, d: q.option_d },
-          correct_answer: q.correct_answer?.toLowerCase()
-        }))
-        setQuestions(formatted)
+        setQuestions(res.data)
         setLoading(false)
-       
       })
-      .catch(() => {
+       .catch(() => {
         setLoading(false)
         navigate('/')
       })
