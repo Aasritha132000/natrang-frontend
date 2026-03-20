@@ -23,7 +23,7 @@ function ProtectedRoute({ children }) {
 function Footer() {
   return (
     <footer style={{ background: '#1a0a00', color: 'white', padding: '40px 32px 20px' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px', maxWidth: '1200px', margin: '0 auto', paddingBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '32px', maxWidth: '1200px', margin: '0 auto', paddingBottom: '32px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
         <div>
           <div style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>
             <span style={{ color: '#f97316' }}>Nata</span>
