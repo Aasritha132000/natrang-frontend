@@ -205,7 +205,8 @@ export default function Quiz() {
     )
   }
 
- const correct = result?.correct_answer?.toLowerCase()
+ const q = questions[current]
+  const correct = result?.correct_answer?.toLowerCase()
   const optionColors = {
     a: selected ? (correct === 'a' ? '#dcfce7' : selected === 'a' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
     b: selected ? (correct === 'b' ? '#dcfce7' : selected === 'b' ? '#fef2f2' : '#f9fafb') : '#f9fafb',
