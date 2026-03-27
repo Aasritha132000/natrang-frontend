@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs'
 import Profile from './pages/Profile'
 import Bookmarks from './pages/Bookmarks'
 import Quiz from './pages/Quiz'
+import Leaderboard from './pages/Leaderboard'
 import IndiaMap from './pages/IndiaMap'
 import MudraDictionary from './pages/MudraDictionary'
 import FestivalCalendar from './pages/FestivalCalendar'
@@ -95,7 +96,9 @@ function MainLayout() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/bookmarks" element={<ProtectedRoute><Bookmarks /></ProtectedRoute>} />
         <Route path="/dances/:id/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
-        <Route path="/map" element={<ProtectedRoute><IndiaMap /></ProtectedRoute>} />
+       
+<Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
+         <Route path="/map" element={<ProtectedRoute><IndiaMap /></ProtectedRoute>} />
         <Route path="/mudras" element={<ProtectedRoute><MudraDictionary /></ProtectedRoute>} />
         <Route path="/festivals" element={<ProtectedRoute><FestivalCalendar /></ProtectedRoute>} />
         <Route path="/hall-of-fame" element={<ProtectedRoute><HallOfFame /></ProtectedRoute>} />

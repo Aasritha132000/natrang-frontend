@@ -62,8 +62,14 @@ export default function Quiz() {
     }
   }
 
-  function handleNext() {
+function handleNext() {
     if (current + 1 >= questions.length) {
+      const token = localStorage.getItem('token')
+      axios.post(
+        `https://natrang-backend.onrender.com/dances/${id}/quiz_score`,
+        { score: score, total: questions.length },
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
       setFinished(true)
     } else {
       setCurrent(current + 1)
