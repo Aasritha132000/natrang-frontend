@@ -21,7 +21,7 @@ export default function Navbar() {
     { to: '/mudras', label: '🤲 Mudras' },
     { to: '/temples', label: '🕌 Temples' },
     { to: '/festivals', label: '📅 Festivals' },
-    { to: '/hall-of-fame', label: '🏆 Legends' },
+    { to: '/hall-of-fame', label: '🏆 Legends' },{ to: '/leaderboard', label: '🥇 Leaderboard' },
   ]
 
   return (

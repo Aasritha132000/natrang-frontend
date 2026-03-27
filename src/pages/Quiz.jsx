@@ -205,6 +205,24 @@ function handleNext() {
             >
               🏠 Home
             </Link>
+<Link
+  to="/leaderboard"
+  style={{
+    background: '#7c3aed',
+    color: 'white',
+    borderRadius: '10px',
+    padding: '12px 24px',
+    fontSize: '14px',
+    fontWeight: '600',
+    textDecoration: 'none'
+  }}
+>
+  🏆 Leaderboard
+</Link>
+
+
+
+
           </div>
         </div>
       </div>
