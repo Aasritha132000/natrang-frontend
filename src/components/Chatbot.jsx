@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const GEMINI_API_KEY = "AIzaSyAwYXqd-sUqVMvsirnRb6nIPnl6ALDlhKE";
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -17,13 +19,21 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch("https://natrang-backend.onrender.com/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [{
+              parts: [{ text: `You are a helpful assistant for Natrang, an Indian culture app. Answer questions about Indian festivals, traditions, dance forms, music, and culture. Keep answers concise. User asks: ${input}` }]
+            }]
+          }),
+        }
+      );
       const data = await response.json();
-      setMessages((prev) => [...prev, { from: "bot", text: data.reply }]);
+      const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      setMessages((prev) => [...prev, { from: "bot", text: answer || "Sorry, I couldn't understand that!" }]);
     } catch (error) {
       setMessages((prev) => [...prev, { from: "bot", text: "Sorry, something went wrong!" }]);
     } finally {
@@ -47,7 +57,7 @@ export default function Chatbot() {
                 </div>
               </div>
             ))}
-            {loading && <div className="text-gray-400 text-sm">Thinking...</div>}
+            {loading && <div className="text-gray-400 text-sm">Thinking... 🪔</div>}
           </div>
           <div className="p-3 border-t flex gap-2">
             <input
