@@ -11,9 +11,6 @@ import Quiz from './pages/Quiz'
 import Leaderboard from './pages/Leaderboard'
 import IndiaMap from './pages/IndiaMap'
 import MudraDictionary from './pages/MudraDictionary'
-import FestivalCalendar from './pages/FestivalCalendar'
-import HallOfFame from './pages/HallOfFame'
-import Temples from './pages/Temples'
 import Admin from './pages/Admin'
 import Navbar from './components/Navbar'
 
@@ -100,9 +97,6 @@ function MainLayout() {
 <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
          <Route path="/map" element={<ProtectedRoute><IndiaMap /></ProtectedRoute>} />
         <Route path="/mudras" element={<ProtectedRoute><MudraDictionary /></ProtectedRoute>} />
-        <Route path="/festivals" element={<ProtectedRoute><FestivalCalendar /></ProtectedRoute>} />
-        <Route path="/hall-of-fame" element={<ProtectedRoute><HallOfFame /></ProtectedRoute>} />
-        <Route path="/temples" element={<ProtectedRoute><Temples /></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
       </Routes>
 

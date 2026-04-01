@@ -19,9 +19,6 @@ export default function Navbar() {
     { to: '/bookmarks', label: '❤️ Saved' },
     { to: '/map', label: '🗺️ Map' },
     { to: '/mudras', label: '🤲 Mudras' },
-    { to: '/temples', label: '🕌 Temples' },
-    { to: '/festivals', label: '📅 Festivals' },
-    { to: '/hall-of-fame', label: '🏆 Legends' },{ to: '/leaderboard', label: '🥇 Leaderboard' },
   ]
 
   return (
