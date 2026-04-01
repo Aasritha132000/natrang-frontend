@@ -163,6 +163,38 @@ export default function Home() {
       </div>
 
       <div style={{ padding: '0 32px 60px' }}>
+{/* Festival Calendar */}
+      <div style={{ padding: '0 32px 40px', maxWidth: '1200px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: '800', color: '#111827', marginBottom: '20px', textAlign: 'center' }}>
+          📅 Indian Dance Festival Calendar
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '16px' }}>
+          {[
+            { month: 'January', festival: 'Makar Sankranti', dance: 'Garba & Folk Dances', color: '#fef3c7', border: '#f59e0b' },
+            { month: 'February', festival: 'Vasant Panchami', dance: 'Bharatanatyam', color: '#ede9fe', border: '#7c3aed' },
+            { month: 'March', festival: 'Holi', dance: 'Kathak & Folk', color: '#fce7f3', border: '#ec4899' },
+            { month: 'April', festival: 'Ugadi / Vishu', dance: 'Kuchipudi & Mohiniyattam', color: '#d1fae5', border: '#10b981' },
+            { month: 'May', festival: 'Buddha Purnima', dance: 'Odissi', color: '#e0f2fe', border: '#0284c7' },
+            { month: 'July', festival: 'Rath Yatra', dance: 'Odissi & Chhau', color: '#fff7ed', border: '#f97316' },
+            { month: 'August', festival: 'Janmashtami', dance: 'Kathak & Manipuri', color: '#fef2f2', border: '#dc2626' },
+            { month: 'October', festival: 'Navratri', dance: 'Garba & Dandiya', color: '#fdf4ff', border: '#a855f7' },
+            { month: 'November', festival: 'Diwali', dance: 'Classical All Forms', color: '#fffbeb', border: '#d97706' },
+            { month: 'December', festival: 'Kuchipudi Festival', dance: 'Kuchipudi', color: '#ecfdf5', border: '#059669' },
+          ].map((item, i) => (
+            <div key={i} style={{ background: item.color, border: `2px solid ${item.border}`, borderRadius: '16px', padding: '20px' }}>
+              <div style={{ fontSize: '12px', fontWeight: '700', color: item.border, textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '6px' }}>
+                {item.month}
+              </div>
+              <div style={{ fontSize: '16px', fontWeight: '700', color: '#111827', marginBottom: '4px' }}>
+                🎉 {item.festival}
+              </div>
+              <div style={{ fontSize: '13px', color: '#6b7280' }}>
+                💃 {item.dance}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px', maxWidth: '1200px', margin: '0 auto' }}>
           {filtered.map(dance => (
             <DanceCard key={dance.id} dance={dance} />
