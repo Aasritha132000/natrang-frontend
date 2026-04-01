@@ -1,7 +1,5 @@
 import { useState } from "react";
-
-const GEMINI_API_KEY = "AIzaSyAwYXqd-sUqVMvsirnRb6nIPnl6ALDlhKE";
-
+const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -19,20 +17,29 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{
-              parts: [{ text: `You are a helpful assistant for Natrang, an Indian culture app. Answer questions about Indian festivals, traditions, dance forms, music, and culture. Keep answers concise. User asks: ${input}` }]
-            }]
-          }),
-        }
-      );
+      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${GROQ_API_KEY}`
+        },
+        body: JSON.stringify({
+          model: "llama3-8b-8192",
+          messages: [
+            {
+              role: "system",
+              content: "You are a helpful assistant for Natrang, an Indian culture app. Answer questions about Indian festivals, traditions, dance forms, music, and culture. Keep answers concise and friendly."
+            },
+            {
+              role: "user",
+              content: input
+            }
+          ],
+          max_tokens: 300
+        }),
+      });
       const data = await response.json();
-      const answer = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      const answer = data?.choices?.[0]?.message?.content;
       setMessages((prev) => [...prev, { from: "bot", text: answer || "Sorry, I couldn't understand that!" }]);
     } catch (error) {
       setMessages((prev) => [...prev, { from: "bot", text: "Sorry, something went wrong!" }]);
