@@ -9,7 +9,6 @@ import Profile from './pages/Profile'
 import Bookmarks from './pages/Bookmarks'
 import Quiz from './pages/Quiz'
 import Leaderboard from './pages/Leaderboard'
-import IndiaMap from './pages/IndiaMap'
 import MudraDictionary from './pages/MudraDictionary'
 import Admin from './pages/Admin'
 import Navbar from './components/Navbar'
@@ -95,7 +94,6 @@ function MainLayout() {
         <Route path="/dances/:id/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
        
 <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
-         <Route path="/map" element={<ProtectedRoute><IndiaMap /></ProtectedRoute>} />
         <Route path="/mudras" element={<ProtectedRoute><MudraDictionary /></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
       </Routes>

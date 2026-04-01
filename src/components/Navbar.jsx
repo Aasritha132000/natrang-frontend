@@ -17,7 +17,6 @@ export default function Navbar() {
     { to: '/', label: 'Dance Forms' },
     { to: '/about', label: 'About Us' },
     { to: '/bookmarks', label: '❤️ Saved' },
-    { to: '/map', label: '🗺️ Map' },
     { to: '/mudras', label: '🤲 Mudras' },
   ]
 
