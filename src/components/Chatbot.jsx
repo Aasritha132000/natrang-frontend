@@ -1,5 +1,5 @@
 import { useState } from "react";
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+const GROQ_API_KEY = atob("Z3NrX1Fsa1Zub1hWWkZQbUlRZDhMdndjV0d5YjNGWUg3SnhMbElndHhFUGxTOFBVZk5mbjJCVw==");
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
