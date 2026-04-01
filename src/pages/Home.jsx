@@ -7,7 +7,6 @@ export default function Home() {
   const navigate = useNavigate()
   const [dances, setDances] = useState([])
   const [filter, setFilter] = useState('all')
-  const [region, setRegion] = useState('all')
   const [search, setSearch] = useState('')
   const [current, setCurrent] = useState(0)
   const slideInterval = useRef(null)
@@ -31,9 +30,8 @@ export default function Home() {
 
   const filtered = dances.filter(d => {
     const matchType = filter === 'all' || d.dance_type === filter
-    const matchRegion = region === 'all' || d.region === region
     const matchSearch = d.name.toLowerCase().includes(search.toLowerCase()) || d.region.toLowerCase().includes(search.toLowerCase())
-    return matchType && matchRegion && matchSearch
+    return matchType && matchSearch
   })
 
   return (
@@ -69,13 +67,6 @@ export default function Home() {
           {['all', 'Classical', 'Folk'].map(type => (
             <button key={type} onClick={() => setFilter(type)} style={{ padding: '8px 24px', borderRadius: '50px', fontWeight: '600', fontSize: '14px', cursor: 'pointer', border: filter === type ? 'none' : '2px solid #f97316', background: filter === type ? '#f97316' : 'transparent', color: filter === type ? 'white' : '#f97316' }}>
               {type === 'all' ? 'All' : type}
-            </button>
-          ))}
-        </div>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-          {['all', 'Tamil Nadu', 'Uttar Pradesh', 'Odisha', 'Andhra Pradesh', 'Kerala', 'Manipur', 'Assam', 'Punjab', 'Gujarat', 'Rajasthan'].map(r => (
-            <button key={r} onClick={() => setRegion(r)} style={{ padding: '6px 14px', borderRadius: '50px', fontWeight: '600', fontSize: '12px', cursor: 'pointer', border: region === r ? 'none' : '2px solid #e5e7eb', background: region === r ? '#111827' : 'transparent', color: region === r ? 'white' : '#6b7280' }}>
-              {r === 'all' ? '🗺️ All Regions' : r}
             </button>
           ))}
         </div>
