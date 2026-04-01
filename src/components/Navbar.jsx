@@ -61,10 +61,38 @@ export default function Navbar() {
       `}</style>
 
       <nav className="navbar">
-        <Link to="/" className="nav-logo">
-          <span style={{color:'#f97316'}}>Nata</span>
-          <span style={{color:'#dc2626'}}>Rang</span>
-        </Link>
+<Link to="/" className="nav-logo" style={{display:'flex', alignItems:'center', gap:'8px', textDecoration:'none'}}>
+  <svg width="28" height="36" viewBox="0 0 70 90">
+    <ellipse cx="35" cy="78" rx="22" ry="10" fill="#8B3A0F"/>
+    <ellipse cx="16" cy="70" rx="5" ry="4" fill="#8B3A0F"/>
+    <ellipse cx="24" cy="67" rx="5.5" ry="4" fill="#8B3A0F"/>
+    <ellipse cx="33" cy="65" rx="5.5" ry="4" fill="#8B3A0F"/>
+    <ellipse cx="42" cy="66" rx="5" ry="4" fill="#8B3A0F"/>
+    <ellipse cx="50" cy="68" rx="4" ry="3.5" fill="#8B3A0F"/>
+    <ellipse cx="16" cy="69" rx="3.5" ry="2" fill="#dc2626"/>
+    <ellipse cx="24" cy="66" rx="4" ry="2" fill="#dc2626"/>
+    <ellipse cx="33" cy="64" rx="4" ry="2" fill="#dc2626"/>
+    <ellipse cx="42" cy="65" rx="3.5" ry="2" fill="#dc2626"/>
+    <ellipse cx="50" cy="67" rx="3" ry="1.8" fill="#dc2626"/>
+    <rect x="13" y="52" width="44" height="22" rx="6" fill="#7a3009"/>
+    <rect x="10" y="46" width="50" height="12" rx="3" fill="#5c2a00"/>
+    <rect x="10" y="46" width="50" height="2.5" rx="1" fill="#d4af37"/>
+    <rect x="10" y="55.5" width="50" height="2.5" rx="1" fill="#d4af37"/>
+    <circle cx="20" cy="40" r="4.5" fill="#b8960c"/><circle cx="20" cy="40" r="2.8" fill="#d4af37"/>
+    <circle cx="30" cy="38" r="4.5" fill="#b8960c"/><circle cx="30" cy="38" r="2.8" fill="#d4af37"/>
+    <circle cx="40" cy="38" r="4.5" fill="#b8960c"/><circle cx="40" cy="38" r="2.8" fill="#d4af37"/>
+    <circle cx="50" cy="40" r="4.5" fill="#b8960c"/><circle cx="50" cy="40" r="2.8" fill="#d4af37"/>
+    <circle cx="25" cy="28" r="4.5" fill="#b8960c"/><circle cx="25" cy="28" r="2.8" fill="#d4af37"/>
+    <circle cx="35" cy="26" r="4.5" fill="#b8960c"/><circle cx="35" cy="26" r="2.8" fill="#d4af37"/>
+    <circle cx="45" cy="28" r="4.5" fill="#b8960c"/><circle cx="45" cy="28" r="2.8" fill="#d4af37"/>
+    <circle cx="30" cy="16" r="4.5" fill="#b8960c"/><circle cx="30" cy="16" r="2.8" fill="#d4af37"/>
+    <circle cx="40" cy="16" r="4.5" fill="#b8960c"/><circle cx="40" cy="16" r="2.8" fill="#d4af37"/>
+    <circle cx="16" cy="70" r="3.5" fill="none" stroke="#d4af37" stroke-width="1.5"/>
+  </svg>
+  <span style={{fontFamily:'Palatino,Georgia,serif', fontSize:'22px', fontWeight:'bold', letterSpacing:'2px'}}>
+    <span style={{color:'#f97316'}}>NATA</span><span style={{color:'#d4af37'}}>RANG</span>
+  </span>
+</Link>
 
         {/* Desktop */}
         <div className="nav-links">
