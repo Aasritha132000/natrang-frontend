@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import Chatbot from "./components/Chatbot";
+import Booking from './pages/Booking'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -92,7 +93,7 @@ function MainLayout() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/bookmarks" element={<ProtectedRoute><Bookmarks /></ProtectedRoute>} />
         <Route path="/dances/:id/quiz" element={<ProtectedRoute><Quiz /></ProtectedRoute>} />
-       
+      <Route path="/booking" element={<ProtectedRoute><Booking /></ProtectedRoute>} /> 
 <Route path="/leaderboard" element={<ProtectedRoute><Leaderboard /></ProtectedRoute>} />
         <Route path="/mudras" element={<ProtectedRoute><MudraDictionary /></ProtectedRoute>} />
         <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />

@@ -12,14 +12,13 @@ export default function Navbar() {
     navigate('/login')
     setMenuOpen(false)
   }
-
-  const links = [
+const links = [
     { to: '/', label: 'Dance Forms' },
     { to: '/about', label: 'About Us' },
     { to: '/bookmarks', label: '❤️ Saved' },
     { to: '/mudras', label: '🤲 Mudras' },
+    { to: '/booking', label: '🗓️ Book Class' },
   ]
-
   return (
     <>
       <style>{`
